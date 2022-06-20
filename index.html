@@ -1,0 +1,110 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/f04493f8e4.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-900">
+
+    <div class="bg-slate-900 flex flex-col md:flex-row h-screen w-screen text-white ">
+        <div class="bg-slate-800 basis-1/4 p-3 text-center">
+            <div class="search-btn flex justify-between items-center mb-12">
+                <span class="bg-slate-600/[.6] hover:bg-slate-600/[.5] rounded p-2">Search for places</span>
+                <i class="fa-solid fa-location-crosshairs bg-slate-600/[.6] hover:bg-slate-600/[.5] rounded-full p-2"></i>
+            </div>
+            <div class="search-form"></div>
+            <div class="weather-imgs flex justify-center items-center relative w-full h-64 mb-6">
+                <i class="fa-solid fa-cloud text-6xl absolute right-0 top-0  opacity-5"></i><i class="fa-solid fa-cloud text-5xl absolute left-px top-0 opacity-5"></i>
+                <i class="fa-solid fa-cloud-sun-rain text-8xl"></i>
+                <i class="fa-solid fa-cloud text-5xl absolute right-0 botoom-0 opacity-5"></i><i class="fa-solid fa-cloud text-6xl absolute left-px bottom-0 opacity-5"></i>
+            </div>
+            <p class="degree text-6xl mb-6">15 <span class="text-3xl text-slate-500">C</span></p>
+            <p class="weather-status text-3xl mb-6 text-slate-500">Shower</p>
+            <div class="date text-slate-500 mb-3">
+                <span>Today</span>
+                <span class="sep px-3">.</span>
+                <span>Fri 5 June</span>
+            </div>
+            <p class="location text-slate-500">
+                <i class="fa fa-map-marker px-1"></i>
+                Rasht
+            </p>
+        </div>
+        <div class="bg-slate-900 basis-3/4 py-3 px-20 relative">
+            <div class="degree-choice text-end p-2 mb-10">
+                <i class=" bg-white text-slate-500 hover:bg-slate-600/[.5] rounded-full py-2 px-3 ">.C</i>
+                <i class=" bg-slate-600/[.6] hover:bg-slate-600/[.5] rounded-full py-2 px-3 mx-3">.F</i>
+            </div>
+            <ul class="flex flex-row gap-4 mb-6">
+                <li class="bg-slate-800 rounded px-2 py-4">
+                    <p class="date">Tommorow</p>
+                    <div class=" text-center mt-3 mb-5"><i class="fa-solid fa-cloud-sun text-4xl"></i></div>
+                    <div>
+                        <span class="loweset">16<span>C</span></span>
+                        <span class="highest">20<span>C</span></span>
+                    </div>
+                </li>
+                <li class="bg-slate-800 rounded px-2 py-4">
+                    <p class="date">Sun , 7 jun</p>
+                    <div class=" text-center mt-3 mb-5"><i class="fa-solid fa-cloud-sun text-4xl"></i></div>
+                    <div>
+                        <span class="loweset">16<span>C</span></span>
+                        <span class="highest">20<span>C</span></span>
+                    </div>
+                </li>
+                <li class="bg-slate-800 rounded px-2 py-4">
+                    <p class="date">Mon , 8 jun</p>
+                    <div class=" text-center mt-3 mb-5"><i class="fa-solid fa-sun text-4xl"></i></div>
+                    <div>
+                        <span class="loweset">16<span>C</span></span>
+                        <span class="highest">20<span>C</span></span>
+                    </div>
+                </li>
+                <li class="bg-slate-800 rounded px-2 py-4">
+                    <p class="date">Tue , 9 jun</p>
+                    <div class=" text-center mt-3 mb-5"><i class="fa-solid fa-sun text-4xl"></i></div>
+                    <div>
+                        <span class="loweset">16<span>C</span></span>
+                        <span class="highest">20<span>C</span></span>
+                    </div>
+                </li>
+                <li class="bg-slate-800 rounded px-2 py-4">
+                    <p class="date">Wed , 10 jun</p>
+                    <div class=" text-center mt-3 mb-5"><i class="fa-solid fa-cloud-rain text-4xl"></i></div>
+                    <div>
+                        <span class="loweset">16<span>C</span></span>
+                        <span class="highest">20<span>C</span></span>
+                    </div>
+                </li>
+            </ul>
+            <div>
+                <p class="text-2xl mb-4">Today's Highlights</p>
+                <ul class="flex gap-4 flex-wrap">
+                    <li class="bg-slate-800 basis-1/3 rounded px-2 py-4 text-center">
+                        <p class="header text-center">Wind Status</p>
+                        <p>7 <span>mph</span></p>
+                        <p><i class="fa-solid  fa-location-arrow"></i>WSW</p>
+                    </li>
+                    <li class="bg-slate-800 basis-1/3 rounded px-2 py-4 text-center">
+                        <p class="header text-center">Humidity</p>
+                        <p>84 <span>%</span></p>
+                        <input type="range" name="" id="">  
+                    </li>
+                    <li class="bg-slate-800 basis-1/3 rounded px-2 py-4 text-center">
+                        <p class="header text-center">Visibility</p>
+                        <p>6.4 <span>miles</span></p>
+                    </li>
+                    <li class="bg-slate-800 basis-1/3 rounded px-2 py-4 text-center">
+                        <p class="header text-center">Air pressure</p>
+                        <p>998<span>mb</span></p>
+                    </li>
+                </ul>
+            </div>
+            <p class="absolute inset-x-1/3 bottom-2 text-xs text-slate-500">created by <a href="">Pardis Haghdoust</a> - devChallenge.io</p>
+        </div>
+    </div>
+
+</body>
+</html>
