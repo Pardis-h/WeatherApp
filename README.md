@@ -5,6 +5,6 @@
 -------------------
 See weather in your city/state or anywhere in the world.
 
-## ⚡️ 𝗧𝗲𝗰𝗵𝗻𝗼𝗹𝗼𝗴𝗶𝗲𝘀<
+## ⚡️ 𝗧𝗲𝗰𝗵𝗻𝗼𝗹𝗼𝗴𝗶𝗲𝘀
 * Tailwind Css
 * Vanilla Js
