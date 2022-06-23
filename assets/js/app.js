@@ -21,51 +21,47 @@ const msg = document.querySelector(".msg");
 const apiKey = "f244a8c180930c1583ec919bc958b7b6";
 
 const todayTemp = document.querySelector(".degree");
-const weatherImgSrc=document.querySelector(".weather-img");
+const weatherImgSrc=document.getElementById("weather-img");
+const weatherStatus = document.querySelector(".weather-status");
+const locationName = document.querySelector(".location-name");
+const todayDate=document.querySelector(".today-date");
+
+const date=new Date();
+const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+const mounts = ['January', 'February', 'March', 'April', 'May', 'June', 'July' , 'August' , 'September' , 'October' , 'November' , 'December'];
+todayDate.innerText = `${days[date.getDay()]} ${date.getDate()} ${mounts[date.getMonth()]}`;
 
 form.addEventListener("submit" , e => {
     e.preventDefault();
     let inputVal = input.value;
-    // const url = "";
-    // console.log(inputVal);
-    const geo = `http://api.openweathermap.org/geo/1.0/direct?q=${inputVal}&limit=5&appid=${apiKey}`;
-    fetch(geo)
+    const geoUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${inputVal}&limit=5&appid=${apiKey}`;
+    fetch(geoUrl)
         .then(responseGeo => responseGeo.json())
         .then(geoData => {
             const {lat ,lon} = geoData[0];
-            const url = `http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&cnt=5&appid=${apiKey}&unit=metric`;
-            console.log(url);
+            // const units = "";
+            const url = `http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&cnt=5&appid=${apiKey}&units=metric`;
             fetch(url)
                 .then(response => response.json())
                 .then(data =>{
                     const {list,city:{name}}=data;
                     const {main,weather} = list[0];
-                    // const icon = `http://openweathermap.org/img/w/${weather[0]["icon"]}.png`;
-                    // const icon = `https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/${weather[0]["icon"]}.svg`;
-                    const icon = weather[0]["id"];
-                    // if(icon===801){
-                    //     weatherImgSrc.classList ="weather-img fa-solid fa-cloud-rain text-8xl";
-                    // }else if{
+                    const icon = weather[0]["icon"];
 
-                    // }
-                    switch (icon) {
-                        case 801:
-                            weatherImgSrc.classList ="weather-img fa-solid fa-cloud-rain text-8xl";
-                            break;
-                        case 800:
-                            weatherImgSrc.classList ="weather-img fa-solid fa-cloud text-8xl";
-                            break;
-                        case 500:
-                            weatherImgSrc.classList ="weather-img fa-solid fa-sun text-8xl";
-                            break;
-                        default:
-                            break;
-                    }
-                    console.log(icon);
+                    console.log(list);
+
                     todayTemp.innerText = Math.round(main.temp);
-                    // weatherImgSrc.classList = icon;
+                    weatherImgSrc.src = `./assets/img/${icon}.png`;
+                    weatherImgSrc.alt = weather[0].description;
+                    weatherStatus.innerText =weather[0].description;
+                    locationName.innerText=name;
+
+
                     searchBox.classList.add("hidden");
                 });
+        })
+        .catch(() => {
+            msg.innerText="Please search a valid city";
         })
     
 })

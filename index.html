@@ -47,19 +47,20 @@
             </div>
             <div class="weather-imgs flex justify-center items-center relative w-full h-64 mb-1">
                 <i class="fa-solid fa-cloud text-6xl absolute right-0 top-0  opacity-5"></i><i class="fa-solid fa-cloud text-5xl absolute left-px top-0 opacity-5"></i>
-                <i class="weather-img fa-solid fa-cloud-sun-rain text-8xl"></i>
+                <!-- <i class="weather-img fa-solid fa-cloud-sun-rain text-8xl"></i> -->
+                <img src="./assets/img/unknown.png" alt="weather" id="weather-img">
                 <i class="fa-solid fa-cloud text-5xl absolute right-0 botoom-0 opacity-5"></i><i class="fa-solid fa-cloud text-6xl absolute left-px bottom-0 opacity-5"></i>
             </div>
-            <p class="degree text-6xl mb-8 font-medium">15<img src="./assets/img/celsius.png" class="w-8 inline-block" alt="Celsius" /></p>
-            <p class="weather-status text-3xl mb-10 text-slate-500 font-semibold">Shower</p>
+            <p class="text-6xl mb-8 font-medium"><span class="degree"></span><img src="./assets/img/celsius.png" class="w-8 inline-block" alt="Celsius" /></p>
+            <p class="weather-status text-3xl mb-10 text-slate-500 font-semibold"></p>
             <div class="date text-slate-500 mb-3">
                 <span>Today</span>
                 <span class="sep px-3">.</span>
-                <span>Fri 5 June</span>
+                <span class="today-date">Fri 5 June</span>
             </div>
-            <p class="location text-slate-500">
+            <p class=" text-slate-500">
                 <i class="fa fa-map-marker px-1"></i>
-                Rasht
+                <span class="location-name"></span>
             </p>
         </div>
         <div class="bg-slate-900 basis-3/4 py-3 px-28 relative">
