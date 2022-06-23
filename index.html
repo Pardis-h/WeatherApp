@@ -6,7 +6,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="./assets/css/style.css">
   <script src="https://kit.fontawesome.com/f04493f8e4.js" crossorigin="anonymous"></script>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
@@ -18,17 +18,18 @@
                 <span class="bg-slate-600/[.6] hover:bg-slate-600/[.5] hover:cursor-pointer transition duration-300 ease-in-out rounded p-2">Search for places</span>
                 <i class="fa-solid fa-location-crosshairs bg-slate-600/[.6] hover:bg-slate-600/[.5] hover:cursor-pointer transition duration-300 ease-in-out rounded-full p-2"></i>
             </div>
-            <div class="absolute bg-slate-800 w-full px-4 py-3 inset-0 z-10 hidden">
-                <div class="text-right">
+            <div class="search-box absolute bg-slate-800 w-full px-4 py-3 inset-0 z-10 hidden">
+                <div class="text-right close-btn hover:cursor-pointer">
                     <i class="fa-solid fa-xmark text-2xl"></i>
                 </div>
-                <form action="" class="flex justify-between gap-1 mt-6 mb-8 max-w-full">
+                <form class="search-form flex justify-between gap-1 mt-6 mb-8 max-w-full">
                     <div class="flex items-center border-solid border-2 border-slate-600 rounded pl-2 py-0">
                         <i class="fa-solid fa-magnifying-glass text-slate-500"></i>
                         <input class="pl-3 py-2 bg-slate-800 text-white outline-0" type="search" name="" id="" placeholder="Search Location">
                     </div>
                     <button type="submit" class="bg-sky-600 hover:bg-sky-700 transition duration-300 ease-in-out rounded px-3 py-2">Search</button>
                 </form>
+                <p class="msg"></p>
                 <ul>
                     <li>
                         <a href="#" class="flex justify-between border-solid border border-transparent hover:border-slate-600 transition duration-300 ease-in-out rounded px-4 py-2 mb-2">
@@ -44,10 +45,9 @@
                     </li>
                 </ul>
             </div>
-            <div class="search-form"></div>
             <div class="weather-imgs flex justify-center items-center relative w-full h-64 mb-1">
                 <i class="fa-solid fa-cloud text-6xl absolute right-0 top-0  opacity-5"></i><i class="fa-solid fa-cloud text-5xl absolute left-px top-0 opacity-5"></i>
-                <i class="fa-solid fa-cloud-sun-rain text-8xl"></i>
+                <i class="weather-img fa-solid fa-cloud-sun-rain text-8xl"></i>
                 <i class="fa-solid fa-cloud text-5xl absolute right-0 botoom-0 opacity-5"></i><i class="fa-solid fa-cloud text-6xl absolute left-px bottom-0 opacity-5"></i>
             </div>
             <p class="degree text-6xl mb-8 font-medium">15<img src="./assets/img/celsius.png" class="w-8 inline-block" alt="Celsius" /></p>
@@ -136,5 +136,6 @@
         </div>
     </div>
 
+    <script src="./assets/js/app.js"></script>
 </body>
 </html>
