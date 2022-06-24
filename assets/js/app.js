@@ -113,7 +113,7 @@ form.addEventListener("submit" , e => {
                             const listItems = document.createElement("li");
                             const markup = `
                                 <div class="bg-slate-800 basis-6/12 max-w-[46%] md:max-w-none md:basis-auto rounded px-7 py-4" >
-                                    <p class="date text-slate-300">${dayName}</p>
+                                    <p class="date text-slate-300">${dayName} , ${d.getDate()} ${mounts[d.getMonth()]}</p>
                                     <div class=" text-center mt-4 mb-5"><img src="./assets/img/${icons}.png" alt="${descs}"></div>
                                     <div class="flex justify-between">
                                         <span class="highest ">${tempMax}<img src="./assets/img/celsius.png" class="w-4 inline-block" alt="Celsius" /></span>
