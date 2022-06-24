@@ -13,6 +13,9 @@ closeBtn.addEventListener("click",() => {
     searchBox.classList.add("hidden");
 })
 
+// Loader
+let loader = document.querySelector(".loader");
+loader.style.display= "none";
 
 // SELECT ELEMENTS
 const form = document.querySelector(".search-form");
@@ -36,7 +39,6 @@ const humidityRange = document.querySelector(".humidity-range");
 const weatherVisibility = document.querySelector(".weather-visibility");
 const pressure = document.querySelector(".pressure");
 const fellLikes = document.querySelector(".feel-likes");
-// const unitImageSrc = document.querySelector(".units-img").src;
 // console.log(unitImageSrc);
 
 // Get Today Date
@@ -50,6 +52,7 @@ todayDate.innerText = `${days[date.getDay()]} ${date.getDate()} ${mounts[date.ge
 unitsF.addEventListener("click",e =>{
     searchActiveUnitsF();
     if(unitsF.classList.contains("units-active")){
+        loader.style.display= "flex";
         linkUrlF = historyUlList.lastElementChild.querySelector(".search-item").dataset.name;
         getWeather(linkUrlF);
         document.querySelector(".current-weather .units-img").src = "./assets/img/fahrenhiet.png";
@@ -65,6 +68,7 @@ function searchActiveUnitsF(){
 unitsC.addEventListener("click",e=>{
     searchActiveUnitsC();
     if(unitsC.classList.contains("units-active")){
+        loader.style.display= "flex";
         linkUrlC = historyUlList.lastElementChild.querySelector(".search-item").dataset.name;
         getWeather(linkUrlC);
         document.querySelector(".current-weather .units-img").src = "./assets/img/celsius.png";
@@ -80,6 +84,7 @@ function searchActiveUnitsC(){
 // Get Weather from search
 form.addEventListener("submit" , e =>{
     e.preventDefault();
+    loader.style.display= "flex";
 
     getWeather(input.value);
 
@@ -94,6 +99,7 @@ form.addEventListener("submit" , e =>{
     newSearch.innerHTML = newSearchMark;
     historyUlList.appendChild(newSearch);
     input.value="";
+
 });
 
 //Get search from Search History
@@ -101,6 +107,7 @@ const searchLink = document.querySelectorAll(".search-item");
 searchLink.forEach(item =>{
     item.addEventListener("click",e=>{
         e.preventDefault();
+        loader.style.display= "flex";
         let linkUrl = item.dataset.name;
         console.log(linkUrl);
         getWeather(linkUrl);
@@ -109,6 +116,7 @@ searchLink.forEach(item =>{
 
 // Get weather API
 function getWeather(city){
+    
     const inputVal = city;
     const geoUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${inputVal}&limit=5&appid=${apiKey}`;
     fetch(geoUrl)
@@ -117,7 +125,6 @@ function getWeather(city){
             const {lat ,lon} = geoData[0];
             let units = "metric";
             unitImageSrc = "./assets/img/celsius.png";
-
             if (unitsF.classList.contains("units-active")) {
                 units = "imperial";
                 unitImageSrc = "./assets/img/fahrenhiet.png";
@@ -126,7 +133,8 @@ function getWeather(city){
             fetch(url)
                 .then(response => response.json())
                 .then(data =>{
-                    const {list,city:{name}}=data;
+                    loader.style.display= "none";
+                    const {list,city:{name}} =  data;
                     const {main,weather} = list[0];
                     const icon = weather[0]["icon"];
                     const timesToDisplay = [0 , 8, 16 , 24 , 32 ];
@@ -206,7 +214,7 @@ function getWeather(city){
         })
     ulList.innerHTML="";
 }
-
+loader.style.display= "flex";
 getWeather("Rasht");
 
 
