@@ -129,7 +129,7 @@ function getWeather(city){
                     const {list,city:{name}}=data;
                     const {main,weather} = list[0];
                     const icon = weather[0]["icon"];
-                    const timesToDisplay = [0 , 8, 16 , 24 ];
+                    const timesToDisplay = [0 , 8, 16 , 24 , 32 ];
                     console.log(list);
 
                     todayTemp.innerText = Math.round(main.temp);
