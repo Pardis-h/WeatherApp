@@ -30,15 +30,9 @@
                     <button type="submit" class="bg-sky-600 hover:bg-sky-700 transition duration-300 ease-in-out rounded px-3 py-2">Search</button>
                 </form>
                 <p class="msg"></p>
-                <ul>
-                    <li>
-                        <a href="#" class="flex justify-between border-solid border border-transparent hover:border-slate-600 transition duration-300 ease-in-out rounded px-4 py-2 mb-2">
-                            <span class="leading-loose">London</span>
-                            <i class="fa-solid fa-angle-right text-slate-500 leading-loose"></i>
-                        </a>
-                    </li>
+                <ul class="search-history">
                     <li >
-                        <a href="#" class="flex justify-between border-solid border border-transparent hover:border-slate-600 transition duration-300 ease-in-out rounded px-4 py-2 mb-2">
+                        <a href="#" data-name="Rasht" class="search-item flex justify-between border-solid border border-transparent hover:border-slate-600 transition duration-300 ease-in-out rounded px-4 py-2 mb-2">
                             <span class="leading-loose">Rasht</span>
                             <i class="fa-solid fa-angle-right text-slate-500 leading-loose"></i>
                         </a>
@@ -50,7 +44,7 @@
                 <img src="./assets/img/unknown.png" alt="weather" id="weather-img">
                 <i class="fa-solid fa-cloud text-5xl absolute right-0 botoom-0 opacity-5"></i><i class="fa-solid fa-cloud text-6xl absolute left-px bottom-0 opacity-5"></i>
             </div>
-            <p class="text-6xl mb-8 font-medium"><span class="degree"></span><img src="./assets/img/celsius.png" class="w-8 inline-block" alt="Celsius" /></p>
+            <p class="text-6xl mb-8 font-medium current-weather"><span class="degree unit-toggle"></span><img src="./assets/img/celsius.png" class="w-8 inline-block units-img" alt="Units" /></p>
             <p class="weather-status text-3xl mb-10 text-slate-500 font-semibold"></p>
             <div class="date text-slate-500 mb-3">
                 <span>Today</span>
@@ -64,58 +58,62 @@
         </div>
         <div class="bg-slate-900 basis-3/4 py-3 px-28 relative">
             <div class="degree-choice text-end p-2 mb-5">
-                <i class=" bg-white text-slate-500 hover:cursor-pointer rounded-full py-2 px-3 "><img src="./assets/img/celsius.png" class="w-6 inline-block" alt="Celsius" /></i>
-                <i class=" bg-slate-600/[.6] hover:bg-white hover:text-slate-500 hover:cursor-pointer transition duration-300 ease-in-out rounded-full py-2 px-3 mx-3"><img src="./assets/img/fahrenhiet.png" class="w-6 inline-block" alt="Fahrenhiet" /></i>
+                <i class="celsius bg-white text-slate-500 hover:cursor-pointer rounded-full py-2 px-3 units-active">
+                    <img src="./assets/img/celsius.png" class="w-6 inline-block " alt="Celsius" />
+                </i>
+                <i class="fahrenhiet bg-slate-600/[.6] hover:bg-white hover:text-slate-500 hover:cursor-pointer transition duration-300 ease-in-out rounded-full py-2 px-3 mx-3">
+                    <img src="./assets/img/fahrenhiet.png" class="w-6 inline-block" alt="Fahrenhiet" />
+                </i>
             </div>
             <ul class="day5forecat flex flex-row flex-wrap md:flex-nowrap justify-between gap-4  mb-7">
                 <li class="bg-slate-800 basis-6/12 max-w-[46%] md:max-w-none md:basis-auto rounded px-7 py-4">
                     <p class="date text-slate-300">Tommorow</p>
                     <div class=" text-center mt-4 mb-5">
-                        <img src="./assets/img/unknown.png" alt="weather" id="weather-img">
+                        <img class="ml-auto mr-auto" src="./assets/img/unknown.png" alt="weather" id="weather-img">
                     </div>
                     <div class="flex justify-between">
-                        <span class="highest ">20<img src="./assets/img/celsius.png" class="w-4 inline-block" alt="Celsius" /></span>
-                        <span class="loweset text-slate-500">16<img src="./assets/img/celsius.png" class="w-4 inline-block" alt="Celsius" /></span>
+                        <span class="highest unit-toggle">20<img src="./assets/img/celsius.png" class="w-4 inline-block units-img" alt="Units" /></span>
+                        <span class="loweset text-slate-500 unit-toggle">16<img src="./assets/img/celsius.png" class="w-4 inline-block units-img" alt="Units" /></span>
                     </div>
                 </li>
                 <li class="bg-slate-800 basis-6/12 max-w-[46%] md:max-w-none md:basis-auto rounded px-7 py-4">
                     <p class="date text-slate-300">Sun , 7 jun</p>
                     <div class=" text-center mt-4 mb-5">
-                        <img src="./assets/img/unknown.png" alt="weather" id="weather-img">
+                        <img class="ml-auto mr-auto" src="./assets/img/unknown.png" alt="weather" id="weather-img">
                     </div>
                     <div class="flex justify-between">
-                        <span class="highest ">20<img src="./assets/img/celsius.png" class="w-4 inline-block" alt="Celsius" /></span>
-                        <span class="loweset text-slate-500">16<img src="./assets/img/celsius.png" class="w-4 inline-block" alt="Celsius" /></span>
+                        <span class="highest unit-toggle">20<img src="./assets/img/celsius.png" class="w-4 inline-block units-img" alt="Units" /></span>
+                        <span class="loweset text-slate-500 unit-toggle">16<img src="./assets/img/celsius.png" class="w-4 inline-block units-img" alt="Units" /></span>
                     </div>
                 </li>
                 <li class="bg-slate-800 basis-6/12 max-w-[46%] md:max-w-none md:basis-auto rounded px-7 py-4">
                     <p class="date text-slate-300">Mon , 8 jun</p>
                     <div class=" text-center mt-4 mb-5">
-                        <img src="./assets/img/unknown.png" alt="weather" id="weather-img">
+                        <img class="ml-auto mr-auto" src="./assets/img/unknown.png" alt="weather" id="weather-img">
                     </div>
                     <div class="flex justify-between">
-                        <span class="highest ">20<img src="./assets/img/celsius.png" class="w-4 inline-block" alt="Celsius" /></span>
-                        <span class="loweset text-slate-500">16<img src="./assets/img/celsius.png" class="w-4 inline-block" alt="Celsius" /></span>
+                        <span class="highest unit-toggle">20<img src="./assets/img/celsius.png" class="w-4 inline-block units-img" alt="Units" /></span>
+                        <span class="loweset text-slate-500 unit-toggle">16<img src="./assets/img/celsius.png" class="w-4 inline-block units-img" alt="Units" /></span>
                     </div>
                 </li>
                 <li class="bg-slate-800 basis-6/12 max-w-[46%] md:max-w-none md:basis-auto rounded px-7 py-4">
                     <p class="date text-slate-300">Tue , 9 jun</p>
                     <div class=" text-center mt-4 mb-5">
-                        <img src="./assets/img/unknown.png" alt="weather" id="weather-img">
+                        <img class="ml-auto mr-auto" src="./assets/img/unknown.png" alt="weather" id="weather-img">
                     </div>
                     <div class="flex justify-between">
-                        <span class="highest ">20<img src="./assets/img/celsius.png" class="w-4 inline-block" alt="Celsius" /></span>
-                        <span class="loweset text-slate-500">16<img src="./assets/img/celsius.png" class="w-4 inline-block" alt="Celsius" /></span>
+                        <span class="highest unit-toggle">20<img src="./assets/img/celsius.png" class="w-4 inline-block units-img" alt="Units" /></span>
+                        <span class="loweset text-slate-500 unit-toggle">16<img src="./assets/img/celsius.png" class="w-4 inline-block units-img" alt="Units" /></span>
                     </div>
                 </li>
                 <li class="bg-slate-800 basis-6/12 max-w-[46%] md:max-w-none md:basis-auto rounded px-7 py-4">
                     <p class="date text-slate-300">Wed , 10 jun</p>
                     <div class=" text-center mt-4 mb-5">
-                        <img src="./assets/img/unknown.png" alt="weather" id="weather-img">
+                        <img class="ml-auto mr-auto" src="./assets/img/unknown.png" alt="weather" id="weather-img">
                     </div>
                     <div class="flex justify-between">
-                        <span class="highest ">20<img src="./assets/img/celsius.png" class="w-4 inline-block" alt="Celsius" /></span>
-                        <span class="loweset text-slate-500">16<img src="./assets/img/celsius.png" class="w-4 inline-block" alt="Celsius" /></span>
+                        <span class="highest unit-toggle">20<img src="./assets/img/celsius.png" class="w-4 inline-block units-img" alt="Units" /></span>
+                        <span class="loweset text-slate-500 unit-toggle">16<img src="./assets/img/celsius.png" class="w-4 inline-block units-img" alt="Units" /></span>
                     </div>
                 </li>
             </ul>
@@ -124,9 +122,9 @@
                 <ul class="flex gap-4 flex-col md:flex-row flex-wrap justify-between mb-10">
                     <li class="bg-slate-800 md:basis-6/12 md:max-w-[48%] rounded px-2 py-4 text-center">
                         <p class="header text-center text-slate-300">Feels Like</p>
-                        <p class="text-5xl mt-3 mb-5 font-bold">
-                            <span class="feel-likes"></span>
-                            <img src="./assets/img/celsius.png" class="w-8 inline-block" alt="Celsius" />
+                        <p class="text-5xl mt-3 mb-5 font-bold current-feel">
+                            <span class="feel-likes unit-toggle"></span>
+                            <img src="./assets/img/celsius.png" class="w-8 inline-block units-img" alt="Units" />
                         </p>
                         <p class="text-sm text-slate-300"><i class="fa-solid fa-temperature-half bg-slate-600/[.6] rounded-full mr-2 p-2"></i></p>
                     </li>
