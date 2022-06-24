@@ -47,7 +47,6 @@
             </div>
             <div class="weather-imgs flex justify-center items-center relative w-full h-64 mb-1">
                 <i class="fa-solid fa-cloud text-6xl absolute right-0 top-0  opacity-5"></i><i class="fa-solid fa-cloud text-5xl absolute left-px top-0 opacity-5"></i>
-                <!-- <i class="weather-img fa-solid fa-cloud-sun-rain text-8xl"></i> -->
                 <img src="./assets/img/unknown.png" alt="weather" id="weather-img">
                 <i class="fa-solid fa-cloud text-5xl absolute right-0 botoom-0 opacity-5"></i><i class="fa-solid fa-cloud text-6xl absolute left-px bottom-0 opacity-5"></i>
             </div>
@@ -68,10 +67,12 @@
                 <i class=" bg-white text-slate-500 hover:cursor-pointer rounded-full py-2 px-3 "><img src="./assets/img/celsius.png" class="w-6 inline-block" alt="Celsius" /></i>
                 <i class=" bg-slate-600/[.6] hover:bg-white hover:text-slate-500 hover:cursor-pointer transition duration-300 ease-in-out rounded-full py-2 px-3 mx-3"><img src="./assets/img/fahrenhiet.png" class="w-6 inline-block" alt="Fahrenhiet" /></i>
             </div>
-            <ul class="flex flex-row flex-wrap md:flex-nowrap justify-between gap-4  mb-7">
+            <ul class="day5forecat flex flex-row flex-wrap md:flex-nowrap justify-between gap-4  mb-7">
                 <li class="bg-slate-800 basis-6/12 max-w-[46%] md:max-w-none md:basis-auto rounded px-7 py-4">
                     <p class="date text-slate-300">Tommorow</p>
-                    <div class=" text-center mt-4 mb-5"><i class="fa-solid fa-cloud-sun text-4xl"></i></div>
+                    <div class=" text-center mt-4 mb-5">
+                        <img src="./assets/img/unknown.png" alt="weather" id="weather-img">
+                    </div>
                     <div class="flex justify-between">
                         <span class="highest ">20<img src="./assets/img/celsius.png" class="w-4 inline-block" alt="Celsius" /></span>
                         <span class="loweset text-slate-500">16<img src="./assets/img/celsius.png" class="w-4 inline-block" alt="Celsius" /></span>
@@ -79,7 +80,9 @@
                 </li>
                 <li class="bg-slate-800 basis-6/12 max-w-[46%] md:max-w-none md:basis-auto rounded px-7 py-4">
                     <p class="date text-slate-300">Sun , 7 jun</p>
-                    <div class=" text-center mt-4 mb-5"><i class="fa-solid fa-cloud-sun text-4xl"></i></div>
+                    <div class=" text-center mt-4 mb-5">
+                        <img src="./assets/img/unknown.png" alt="weather" id="weather-img">
+                    </div>
                     <div class="flex justify-between">
                         <span class="highest ">20<img src="./assets/img/celsius.png" class="w-4 inline-block" alt="Celsius" /></span>
                         <span class="loweset text-slate-500">16<img src="./assets/img/celsius.png" class="w-4 inline-block" alt="Celsius" /></span>
@@ -87,7 +90,9 @@
                 </li>
                 <li class="bg-slate-800 basis-6/12 max-w-[46%] md:max-w-none md:basis-auto rounded px-7 py-4">
                     <p class="date text-slate-300">Mon , 8 jun</p>
-                    <div class=" text-center mt-4 mb-5"><i class="fa-solid fa-sun text-4xl"></i></div>
+                    <div class=" text-center mt-4 mb-5">
+                        <img src="./assets/img/unknown.png" alt="weather" id="weather-img">
+                    </div>
                     <div class="flex justify-between">
                         <span class="highest ">20<img src="./assets/img/celsius.png" class="w-4 inline-block" alt="Celsius" /></span>
                         <span class="loweset text-slate-500">16<img src="./assets/img/celsius.png" class="w-4 inline-block" alt="Celsius" /></span>
@@ -95,7 +100,9 @@
                 </li>
                 <li class="bg-slate-800 basis-6/12 max-w-[46%] md:max-w-none md:basis-auto rounded px-7 py-4">
                     <p class="date text-slate-300">Tue , 9 jun</p>
-                    <div class=" text-center mt-4 mb-5"><i class="fa-solid fa-sun text-4xl"></i></div>
+                    <div class=" text-center mt-4 mb-5">
+                        <img src="./assets/img/unknown.png" alt="weather" id="weather-img">
+                    </div>
                     <div class="flex justify-between">
                         <span class="highest ">20<img src="./assets/img/celsius.png" class="w-4 inline-block" alt="Celsius" /></span>
                         <span class="loweset text-slate-500">16<img src="./assets/img/celsius.png" class="w-4 inline-block" alt="Celsius" /></span>
@@ -103,7 +110,9 @@
                 </li>
                 <li class="bg-slate-800 basis-6/12 max-w-[46%] md:max-w-none md:basis-auto rounded px-7 py-4">
                     <p class="date text-slate-300">Wed , 10 jun</p>
-                    <div class=" text-center mt-4 mb-5"><i class="fa-solid fa-cloud-rain text-4xl"></i></div>
+                    <div class=" text-center mt-4 mb-5">
+                        <img src="./assets/img/unknown.png" alt="weather" id="weather-img">
+                    </div>
                     <div class="flex justify-between">
                         <span class="highest ">20<img src="./assets/img/celsius.png" class="w-4 inline-block" alt="Celsius" /></span>
                         <span class="loweset text-slate-500">16<img src="./assets/img/celsius.png" class="w-4 inline-block" alt="Celsius" /></span>
@@ -114,22 +123,32 @@
                 <p class="text-2xl mb-4">Today's Highlights</p>
                 <ul class="flex gap-4 flex-col md:flex-row flex-wrap justify-between mb-10">
                     <li class="bg-slate-800 md:basis-6/12 md:max-w-[48%] rounded px-2 py-4 text-center">
-                        <p class="header text-center text-slate-300">Wind Status</p>
-                        <p class="text-5xl mt-3 mb-5 font-bold">7<span class="text-xl font-normal">mph</span></p>
-                        <p class="text-sm text-slate-300"><i class="fa-solid fa-location-arrow -rotate-180 bg-slate-600/[.6] hover:bg-slate-600/[.5] rounded-full mr-2 p-2"></i>WSW</p>
+                        <p class="header text-center text-slate-300">Feels Like</p>
+                        <p class="text-5xl mt-3 mb-5 font-bold">
+                            <span class="feel-likes"></span>
+                            <img src="./assets/img/celsius.png" class="w-8 inline-block" alt="Celsius" />
+                        </p>
+                        <p class="text-sm text-slate-300"><i class="fa-solid fa-temperature-half bg-slate-600/[.6] rounded-full mr-2 p-2"></i></p>
                     </li>
                     <li class="bg-slate-800 md:basis-6/12 md:max-w-[48%] rounded px-2 py-4 text-center">
-                        <p class="header text-center text-slate-300">Humidity</p>
-                        <p class="text-5xl mt-3 mb-5 font-bold">84<span class="text-xl font-normal">%</span></p>
-                        <input type="range" name="" id="" min="0" max="100" value="84" disabled>  
+                        <p class="header text-center text-slate-300 ">Humidity</p>
+                        <p class="text-5xl mt-3 mb-5 font-bold">
+                            <span class="humidity"></span>
+                            <span class="text-xl font-normal">%</span>
+                        </p>
+                        <input type="range" class="humidity-range" name="" id="" min="0" max="100" value="84" disabled>  
                     </li>
                     <li class="bg-slate-800 md:basis-6/12 md:max-w-[48%] rounded px-2 py-4 text-center">
                         <p class="header text-center text-slate-300">Visibility</p>
-                        <p class="text-5xl mt-3 mb-5 font-bold">6.4<span class="text-xl font-normal" >miles</span></p>
+                        <p class="text-5xl mt-3 mb-5 font-bold">
+                            <span class="weather-visibility"></span>
+                            <span class="text-xl font-normal" >miles</span></p>
                     </li>
                     <li class="bg-slate-800 md:basis-6/12 md:max-w-[48%] rounded px-2 py-4 text-center">
                         <p class="header text-center text-slate-300">Air pressure</p>
-                        <p class="text-5xl mt-3 mb-5 font-bold">998<span class="text-xl font-normal">mb</span></p>
+                        <p class="text-5xl mt-3 mb-5 font-bold">
+                            <span class="pressure"></span>
+                            <span class="text-xl font-normal">mb</span></p>
                     </li>
                 </ul>
             </div>
