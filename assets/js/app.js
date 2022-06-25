@@ -137,7 +137,7 @@ function getWeather(city){
                     const {list,city:{name}} =  data;
                     const {main,weather} = list[0];
                     const icon = weather[0]["icon"];
-                    const timesToDisplay = [0 , 8, 16 , 24 , 32 ];
+                    const timesToDisplay = [0 , 8, 16 , 24 , 32 , 40 ];
                     console.log(list);
 
                     todayTemp.innerText = Math.round(main.temp);
@@ -165,7 +165,7 @@ function getWeather(city){
         
                         if(dayName === days[date.getDay()]){
                             const listItems = document.createElement("li");
-                            listItems.classList="bg-slate-800 basis-6/12 max-w-[46%] md:max-w-none md:basis-auto rounded px-7 py-4";
+                            listItems.classList="bg-slate-800 basis-6/12 w-44 max-w-[46%] md:max-w-none md:basis-auto rounded px-7 py-4";
                             const markup = `
                                     <p class="date text-slate-300 flex justify-between"><span>Today</span><span> ${dayTime}</span></p>
                                     <div class=" text-center mt-4 mb-5"><img class="ml-auto mr-auto" src="./assets/img/${icons}.png" alt="${descs}"></div>
@@ -179,7 +179,7 @@ function getWeather(city){
                         }else if (timesToDisplay.includes(index) && dayName === days[date.getDay() + 1]) {
 
                             const listItems = document.createElement("li");
-                            listItems.classList="bg-slate-800 basis-6/12 max-w-[46%] md:max-w-none md:basis-auto rounded px-7 py-4";
+                            listItems.classList="bg-slate-800 basis-6/12 w-44 max-w-[46%] md:max-w-none md:basis-auto rounded px-7 py-4";
                             const markup = `
                                     <p class="date text-slate-300">Tommorow</p>
                                     <div class=" text-center mt-4 mb-5"><img class="ml-auto mr-auto" src="./assets/img/${icons}.png" alt="${descs}"></div>
@@ -193,7 +193,7 @@ function getWeather(city){
                         }else if (timesToDisplay.includes(index) && dayName !== days[date.getDay() + 1]) {
 
                             const listItems = document.createElement("li");
-                            listItems.classList="bg-slate-800 basis-6/12 max-w-[46%] md:max-w-none md:basis-auto rounded px-7 py-4";
+                            listItems.classList="bg-slate-800 basis-6/12 w-44 max-w-[46%] md:max-w-none md:basis-auto rounded px-7 py-4";
                             const markup = `
                                     <p class="date text-slate-300">${dayName} , ${d.getDate()} ${mounts[d.getMonth()]}</p>
                                     <div class=" text-center mt-4 mb-5"><img class="ml-auto mr-auto" src="./assets/img/${icons}.png" alt="${descs}"></div>
@@ -218,3 +218,43 @@ loader.style.display= "flex";
 getWeather("Rasht");
 
 
+// Slider
+let sliderContainer = document.querySelector('.slider-container');
+let innerSlider = document.querySelector('.day5forecat');
+
+let pressed = false;
+let startX;
+let x;
+sliderContainer.addEventListener("mouseenter", () => {
+    sliderContainer.style.cursor = "grab";
+});
+sliderContainer.addEventListener("mousedown", (e) => {
+    pressed = true;
+    startX = e.pageX - innerSlider.offsetLeft;
+    sliderContainer.style.cursor = "grabbing";
+});
+sliderContainer.addEventListener("mouseup", () => {
+    sliderContainer.style.cursor = "grab";
+    pressed = false;
+});
+sliderContainer.addEventListener("mousemove", (e) => {
+    if (!pressed) return;
+    e.preventDefault();
+    x = e.pageX ;
+    innerSlider.style.left = `${x - startX}px`;
+    console.log(x);
+    console.log(x - startX);
+    checkBoundary();
+});
+const checkBoundary = () => {
+    let outer = sliderContainer.getBoundingClientRect();
+    let inner = innerSlider.getBoundingClientRect();
+
+    if (parseInt(innerSlider.style.left) > 0) {
+        innerSlider.style.left = "0px";
+    }
+
+    if (inner.right < outer.right) {
+        innerSlider.style.left = `-${inner.width - outer.width}px`;
+    }
+};

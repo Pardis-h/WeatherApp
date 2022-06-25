@@ -12,3 +12,10 @@ ol, ul, li {
   list-style: none;
   padding: 0;
 }
+
+.day5forecat li{
+  user-select: none;
+}
+.slider-container{
+  min-height: 260px;
+}
