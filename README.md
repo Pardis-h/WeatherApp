@@ -5,6 +5,8 @@
 -------------------
 See weather in your city/state or anywhere in the world.
 
+## 👀 𝗣𝗿𝗲𝘃𝗶𝗲𝘄
+<img src="./readme-files/weatherapp.png">
 
 ## ⚡️ 𝗧𝗲𝗰𝗵𝗻𝗼𝗹𝗼𝗴𝗶𝗲𝘀
 * Tailwind Css
