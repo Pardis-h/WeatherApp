@@ -242,8 +242,8 @@ sliderContainer.addEventListener("mousemove", (e) => {
     e.preventDefault();
     x = e.pageX ;
     innerSlider.style.left = `${x - startX}px`;
-    console.log(x);
-    console.log(x - startX);
+    // console.log("x:",x);
+    // console.log("x- startX",x - startX);
     checkBoundary();
 });
 const checkBoundary = () => {
