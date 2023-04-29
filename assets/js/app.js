@@ -125,11 +125,11 @@ function getWeather(city){
             const {lat ,lon} = geoData[0];
             let units = "metric";
             unitImageSrc = "./assets/img/celsius.png";
-            if (unitsF.classList.contains("units-active")) {
+            if (unitsF.classList.contains("kunits-active")) {
                 units = "imperial";
                 unitImageSrc = "./assets/img/fahrenhiet.png";
             }
-            const url = `http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}&units=${units}`;
+            const url = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}&units=${units}`;
             fetch(url)
                 .then(response => response.json())
                 .then(data =>{
