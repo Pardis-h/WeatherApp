@@ -165,7 +165,7 @@ function getWeather(city){
         
                         if(dayName === days[date.getDay()]){
                             const listItems = document.createElement("li");
-                            listItems.classList="bg-slate-800 basis-6/12 w-44 max-w-[46%] md:max-w-none md:basis-auto rounded px-7 py-4";
+                            listItems.classList="bg-slate-800 basis-6/12 w-full sm:w-44 sm:max-w-[46%] md:max-w-none md:basis-auto rounded px-7 py-4";
                             const markup = `
                                     <p class="date text-slate-300 flex justify-between"><span>Today</span><span> ${dayTime}</span></p>
                                     <div class=" text-center mt-4 mb-5"><img class="ml-auto mr-auto" src="./assets/img/${icons}.png" alt="${descs}"></div>
@@ -179,7 +179,7 @@ function getWeather(city){
                         }else if (timesToDisplay.includes(index) && dayName === days[date.getDay() + 1]) {
 
                             const listItems = document.createElement("li");
-                            listItems.classList="bg-slate-800 basis-6/12 w-44 max-w-[46%] md:max-w-none md:basis-auto rounded px-7 py-4";
+                            listItems.classList="bg-slate-800 basis-6/12 w-full sm:w-44 sm:max-w-[46%] md:max-w-none md:basis-auto rounded px-7 py-4";
                             const markup = `
                                     <p class="date text-slate-300">Tommorow</p>
                                     <div class=" text-center mt-4 mb-5"><img class="ml-auto mr-auto" src="./assets/img/${icons}.png" alt="${descs}"></div>
@@ -193,7 +193,7 @@ function getWeather(city){
                         }else if (timesToDisplay.includes(index) && dayName !== days[date.getDay() + 1]) {
 
                             const listItems = document.createElement("li");
-                            listItems.classList="bg-slate-800 basis-6/12 w-44 max-w-[46%] md:max-w-none md:basis-auto rounded px-7 py-4";
+                            listItems.classList="bg-slate-800 basis-6/12 w-full sm:w-44 sm:max-w-[46%] md:max-w-none md:basis-auto rounded px-7 py-4";
                             const markup = `
                                     <p class="date text-slate-300">${dayName} , ${d.getDate()} ${mounts[d.getMonth()]}</p>
                                     <div class=" text-center mt-4 mb-5"><img class="ml-auto mr-auto" src="./assets/img/${icons}.png" alt="${descs}"></div>
